@@ -35,8 +35,9 @@
 
 &i2c0 {
     compatible = "nordic,nrf-twi";
-    sda-pin = <2>;   // P0.02 - SDA
-    scl-pin = <3>;   // P0.03 - SCL
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
     status = "okay";
 
     ssd1306: ssd1306@3c {
@@ -52,5 +53,22 @@
         com-invdir;
         com-sequential;
         prechargep = <0x22>;
+    };
+};
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>,   // P0.02 - SDA
+                    <NRF_PSEL(TWIM_SCL, 0, 3)>;   // P0.03 - SCL
+        };
+    };
+    
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 2)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 3)>;
+            low-power-enable;
+        };
     };
 };
