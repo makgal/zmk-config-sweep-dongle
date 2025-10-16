@@ -4,7 +4,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
-        zephyr,display = &ssd1306;
+        zephyr,display = &oled;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -35,19 +35,19 @@
 
 &pro_micro_i2c {
     status = "okay";
-
-    ssd1306: ssd1306@3c {
+    oled: sh1106@3c {
         compatible = "sinowealth,sh1106";
         reg = <0x3c>;
-        width = <128>;
+        width = <129>;
         height = <64>;
-        segment-offset = <0>;
+        segment-offset = <1>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <64>;
+        multiplex-ratio = <63>;
         segment-remap;
         com-invdir;
-        com-sequential;
+        inversion-on;
         prechargep = <0x22>;
-    };
+        };
+}; 
 };
