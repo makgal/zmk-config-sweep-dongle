@@ -33,7 +33,7 @@
     };
 };
 
-&pro_micro_i2c {
+&i2c0 {
     status = "okay";
 
     ssd1306: ssd1306@3c {
@@ -50,4 +50,6 @@
         com-sequential;
         prechargep = <0x22>;
     };
+};
+
 };
