@@ -40,9 +40,9 @@
     pinctrl-names = "default", "sleep";
     status = "okay";
 
-    ssd1306: ssd1306@3d {
+    ssd1306: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
-        reg = <0x3d>;
+        reg = <0x3c>;
         width = <128>;
         height = <64>;
         segment-offset = <0>;
