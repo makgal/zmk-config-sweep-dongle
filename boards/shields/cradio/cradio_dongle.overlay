@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
+        zephyr,display = &ssd1306;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -42,7 +43,6 @@
     ssd1306: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
-        label = "SSD1306";
         width = <128>;
         height = <64>;
         segment-offset = <0>;
