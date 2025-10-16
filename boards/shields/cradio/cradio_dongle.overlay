@@ -30,27 +30,27 @@
         display-name = "Default Layout";
         transform = <&default_transform>;
     };
+};
 
-    &i2c0 {
-        compatible = "nordic,nrf-twi";
-        sda-pin = <17>;
-        scl-pin = <20>;
-        status = "okay";
+&i2c0 {
+    compatible = "nordic,nrf-twi";
+    sda-pin = <17>;
+    scl-pin = <20>;
+    status = "okay";
 
-        ssd1306: ssd1306@3c {
-            compatible = "solomon,ssd1306fb";
-            reg = <0x3c>;
-            label = "SSD1306";
-            width = <128>;
-            height = <64>;
-            segment-offset = <0>;
-            page-offset = <0>;
-            display-offset = <0>;
-            multiplex-ratio = <63>;
-            segment-remap;
-            com-invdir;
-            com-sequential;
-            prechargep = <0x22>;
-        };
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "SSD1306";
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
     };
 };
