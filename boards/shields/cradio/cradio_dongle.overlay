@@ -4,7 +4,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
-        zephyr,display = &ssd1306;
+        zephyr,display = &oled;
 };
 
     mock_kscan: mock_kscan_0 {
@@ -35,8 +35,8 @@
 
 &pro_micro_i2c {
     status = "okay";
-
-    ssd1306: ssd1306@3c {
+    
+    oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
@@ -47,7 +47,7 @@
         multiplex-ratio = <63>;
         segment-remap;
         com-invdir;
-        com-sequential;
+        inversion-on;
         prechargep = <0x22>;
     };
 };
