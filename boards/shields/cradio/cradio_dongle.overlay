@@ -5,7 +5,7 @@
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
         zephyr,display = &oled;
-};
+    };
 
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
@@ -48,7 +48,7 @@
         multiplex-ratio = <63>;
         segment-remap;
         com-invdir;
-        inversion-on;
+        com-sequential;
         prechargep = <0x22>;
     };
 };
