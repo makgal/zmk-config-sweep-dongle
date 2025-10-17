@@ -33,30 +33,10 @@
     };
 };
 
-&pinctrl {
-    i2c0_default: i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>, // GPIO P0.26
-            <NRF_PSEL(TWIM_SCL, 0, 27)>;     // GPIO P0.27
-        };
-    };
-
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>, // GPIO P0.26
-            <NRF_PSEL(TWIM_SCL, 0, 27)>;     // GPIO P0.27
-        };
-    };
-};
-
 &i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
     clock-frequency = <I2C_BITRATE_FAST>;
-    zephyr,concat-buf-size = <4096>;
 
     ssd1306: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
