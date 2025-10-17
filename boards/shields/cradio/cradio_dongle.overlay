@@ -36,8 +36,7 @@
 &i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
-    clock-frequency = <I2C_BITRATE_FAST>;
-
+    clock-frequency = <I2C_BITRATE_STANDARD>;
     ssd1306: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
@@ -48,9 +47,7 @@
         display-offset = <0>;
         multiplex-ratio = <63>;
         prechargep = <0x22>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
+        ready-time-ms = <50>; 
     };
 };
 
