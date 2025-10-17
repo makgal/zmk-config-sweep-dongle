@@ -33,8 +33,11 @@
     };
 };
 
-&pro_micro_i2c {
+&i2c0 {
+    compatible = "nordic,nrf-twi";
     status = "okay";
+    sda-pin = <26>;
+    scl-pin = <27>;
     clock-frequency = <100000>;
 
     oled: ssd1306@3c {
@@ -52,3 +55,4 @@
         prechargep = <0x22>;
     };
 };
+
