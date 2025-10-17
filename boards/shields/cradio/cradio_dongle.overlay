@@ -36,13 +36,15 @@
 &i2c0 {
     compatible = "nordic,nrf-twi";
     status = "okay";
-    sda-pin = <26>;
-    scl-pin = <27>;
+
+    sda-gpios = <&gpio0 26 GPIO_ACTIVE_HIGH>;
+    scl-gpios = <&gpio0 27 GPIO_ACTIVE_HIGH>;
     clock-frequency = <100000>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
+        label = "SSD1306";
         width = <128>;
         height = <64>;
         segment-offset = <0>;
@@ -55,4 +57,5 @@
         prechargep = <0x22>;
     };
 };
+
 
