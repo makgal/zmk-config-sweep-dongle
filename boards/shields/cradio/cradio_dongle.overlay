@@ -48,6 +48,9 @@
         multiplex-ratio = <63>;
         prechargep = <0x22>;
         ready-time-ms = <50>; 
+        segment-remap;
+        com-invdir;
+        com-sequential;
     };
 };
 
