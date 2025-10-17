@@ -36,9 +36,6 @@
 &i2c0 {
     compatible = "nordic,nrf-twi";
     status = "okay";
-
-    sda-gpios = <&gpio0 26 GPIO_ACTIVE_HIGH>;
-    scl-gpios = <&gpio0 27 GPIO_ACTIVE_HIGH>;
     clock-frequency = <100000>;
 
     oled: ssd1306@3c {
